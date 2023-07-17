@@ -19,6 +19,7 @@ function App() {
 
   return (
    <div>
+      {/* <Header /> */}
       <NavBar />
       <Switch>
         <Route exact path="/" render={() => <Home />}/>
