@@ -1,22 +1,99 @@
-:root{
-  --index: 0;
-}
-
 body{
   padding: 0;
   margin: 0; 
 }
 
-.carousel{
-  --slider-index: 0;
-  position: relative;
+.mainContainer{
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading{
+  background-color: blue;
+  justify-content: center;
+}
+
+.heading h1{
+  text-align: center;
+}
+
+.renderSection{
+  background-color: green;
+  display: flex;
+  max-width: inherit;
+  max-height: fit-content;
+  padding-bottom: 0;
+}
+
+.navBar{
   background-color: red;
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  max-width: fit-content;
+}
+
+.carouselContainer{
+  background-color: gray;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel{
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: fit-content;
 } 
 
-.image{
-  width: 10%;
-  height: 10%;
+.buttonsContainer{
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.buttonsContainer > button{
+  width: 2.5rem;
+}
+
+.pantryItems{
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.groceryItems{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-right: auto;
+}
+
+.groceryItems > .gItem{
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  max-width: 15ch;
+  word-wrap: break-word;
+  flex-direction: column;
+  margin-top: 1rem;
 }
