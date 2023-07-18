@@ -3,7 +3,6 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import Pantry from './Pantry'
 import NavBar from './NavBar'
-import Header from './Header'
 import PantryForm from './PantryForm'
 
 function App() {
@@ -23,15 +22,12 @@ function App() {
 
   return (
     <div className='mainContainer'>
-      <Header />
-      <div className='renderSection'>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" render={() => <Home />}/>
-          <Route exact path="/pantry" render={()=> <Pantry pantry={pantry} setPantry={setPantry}/>}/>
-          <Route exaxt path="/form" render={()=> <PantryForm pantry={pantry} setPantry={setPantry}/>}/>
-        </Switch>
-      </div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" render={() => <Home />}/>
+        <Route exact path="/pantry" render={()=> <Pantry pantry={pantry} setPantry={setPantry}/>}/>
+        <Route exaxt path="/form" render={()=> <PantryForm pantry={pantry} setPantry={setPantry}/>}/>
+      </Switch>
     </div>
   )
 }
