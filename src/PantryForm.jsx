@@ -1,26 +1,69 @@
-function PantryForm({pantry, pantryForm}){
+import { useState } from "react"
+
+function PantryForm({pantry, setPantry}){
     
     const [newForm, setForm] = useState({
         id:"",
-        quantity:"",
-        priority:"",
+        quantity:0,
+        priority: true,
         brand:"",
-        categories:"",
+        categories:[],
+        description:"",
         images:[{sizes:[{url:""}]}]
     })
+
+    function handleChange(e){
+        setForm({...newForm,
+            [e.target.name]:e.target.value
+        })
+    }
     
-    
+    function handleSubmit(e){
+        e.preventDefault()
+        if(newForm.brand !== "" && newForm.description !== "" && newForm.images[0].sizes[0].url !== "" && newForm.categories[0] !== "Select Category"){
+            fetch(`http://localhost:3000/data`,{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },body: JSON.stringify({...newForm})
+            }).then(res => res.json())
+            .then(data => setPantry([...pantry, newForm]))
+            e.target.reset()
+        }else{
+            alert("Please Enter All Fields!")
+        }
+    }
+
     return(
-        <form>
-            <input input="number"></input>
-            <select>
-                <option></option>
-                <option></option>
-            </select>
-            <input></input>
-            <input></input>
-            <input type="submit"></input>
-        </form>
+        <div className="newItemForm">
+            <h2>Submit New Item</h2>
+            <form onSubmit={handleSubmit}>
+                <label>Input Quantity</label>
+                <input onChange={handleChange} name="quantity" type="number" min={0}></input>
+                <label>Select Priority</label>
+                <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})}name="priority">
+                    <option>Priority</option>
+                    <option>Not a Priority</option>
+                </select>
+                <label>Brand</label>
+                <input onChange={handleChange} name="brand" type="text"></input>
+                <label>Categories</label>
+                <select onChange={e => setForm({...newForm, categories:[e.target.value]})}>
+                    <option>Select Category</option>
+                    <option>Meat and Seafood</option>
+                    <option>General Grocery</option>
+                    <option>Dairy</option>
+                    <option>Produce</option>
+                    <option>Bakery</option>
+                    <option>Deli</option>
+                </select>
+                <label>Description</label>
+                <input onChange={handleChange} name="description" type="text"></input>
+                <label>Image url</label>
+                <input onChange={e => setForm({...newForm, images:[{sizes:[{url:e.target.value}]}]})}name="images" type="text"></input>
+                <input type="submit"></input>
+            </form>
+        </div>
     )
 }
 export default PantryForm

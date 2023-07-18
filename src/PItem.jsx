@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 
-function PItem({item, addItem}){
+function PItem({item, addItem, handleDelete}){
 
     const [quantity, setQuantity] = useState(item===undefined? 0 : item.quantity)
 
@@ -29,17 +29,21 @@ function PItem({item, addItem}){
         })
     }
 
+    
+
     return(
         <div className="pantryItems">
             {item===undefined ? <>Loading...</> : <>
                 <img width={100} height={100} src={item.images[0].sizes[1]?.url} alt="loading"/>
+                <p>{item.description}</p>
                 <label>In Pantry: </label>
-                <form onSubmit={e => patchQuantity(e)}>
+                <form className="pForm" onSubmit={e => patchQuantity(e)}>
                     <input onChange={handleChange} type="number" value={quantity}></input>
                     <input type='submit' value="Update Quantity"></input>
                 </form>
                 <p>Priority: {item.priority === true? "Need":"Don't need"}</p>
                 <button onClick={handleClick}>Add Item</button>
+                <button onClick={() => handleDelete(item)}>Delete Item From Pantry</button>
             </>}
         </div>
     )

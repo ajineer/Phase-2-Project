@@ -4,6 +4,7 @@ import Home from './Home'
 import Pantry from './Pantry'
 import NavBar from './NavBar'
 import Header from './Header'
+import PantryForm from './PantryForm'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
     fetchData()
   },[])
 
+  
+
   return (
     <div className='mainContainer'>
       <Header />
@@ -25,8 +28,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" render={() => <Home />}/>
-          <Route exact path="/pantry" render={()=> <Pantry pantry={pantry}/>}/>
-          <Route exaxt path="/Form" render={()=> <PantryForm pantry={pantry} setPantry={setPantry}/>}/>
+          <Route exact path="/pantry" render={()=> <Pantry pantry={pantry} setPantry={setPantry}/>}/>
+          <Route exaxt path="/form" render={()=> <PantryForm pantry={pantry} setPantry={setPantry}/>}/>
         </Switch>
       </div>
     </div>

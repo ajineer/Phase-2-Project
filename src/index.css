@@ -79,6 +79,19 @@ body{
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.pantryItems img{
+  margin-left: auto;
+  margin-right: auto;
+}
+.pantryItems p{
+  max-width: 15ch;
+  overflow: scroll;
+}
+
+.pForm{
+  display: flex;
+  flex-direction: column;
+}
 
 .groceryItems{
   display: flex;
@@ -96,4 +109,13 @@ body{
   word-wrap: break-word;
   flex-direction: column;
   margin-top: 1rem;
+}
+
+.newItemForm{
+  background-color: limegreen;
+}
+
+.newItemForm form{
+  display: flex;
+  flex-direction: column;
 }

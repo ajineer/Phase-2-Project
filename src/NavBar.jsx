@@ -9,7 +9,7 @@ function NavBar(){
             <NavLink to={"/pantry"} exact>
                 Pantry
             </NavLink>
-            <NavLink to={"/PantryForm"} exact>
+            <NavLink to={"/form"} exact>
                 New Item
             </NavLink>
         </div>
