@@ -1,4 +1,5 @@
 function GItem({item, removeItem}){
+    {}
 
     function handleRemove(){
         removeItem(item)
@@ -6,7 +7,7 @@ function GItem({item, removeItem}){
 
     return (
         <div className="gItem">
-            <img width={100} height={100} src={item.images[0].sizes[1]?.url}/>
+            <img width={100} height={100} src={item.image}/>
             <p className="gDescription">{item.description}</p>
             <p>Priority: {item.priority === true?  "Need": "Not a priority"}</p>
             <label>Quantity: </label>

@@ -3,15 +3,18 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min"
 function NavBar(){
     return(
         <div className="navBar">
-            <h1>Packer</h1>
+            <h1><span className="firstLetter">P</span><span className="nextLetters">rackr</span></h1>
             <NavLink to={"/"} exact>
-                Home
+                <span>Home</span>
             </NavLink>
             <NavLink to={"/pantry"} exact>
-                Pantry
+                <span>Pantry</span>
+            </NavLink>
+            <NavLink to={"/groceryLists"}>
+                <span>Grocery Lists</span>
             </NavLink>
             <NavLink to={"/form"} exact>
-                New Item
+                <span>New Item</span>
             </NavLink>
         </div>
     )

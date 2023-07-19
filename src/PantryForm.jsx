@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function PantryForm({pantry, setPantry}){
+function PantryForm({pantry, setPantry, groceryList, setGroceryList}){
     
     const [newForm, setForm] = useState({
         id:"",
@@ -35,34 +35,36 @@ function PantryForm({pantry, setPantry}){
     }
 
     return(
-        <div className="newItemForm">
-            <h2>Submit New Item</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Input Quantity</label>
-                <input onChange={handleChange} name="quantity" type="number" min={0}></input>
-                <label>Select Priority</label>
-                <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})}name="priority">
-                    <option>Priority</option>
-                    <option>Not a Priority</option>
-                </select>
-                <label>Brand</label>
-                <input onChange={handleChange} name="brand" type="text"></input>
-                <label>Categories</label>
-                <select onChange={e => setForm({...newForm, categories:[e.target.value]})}>
-                    <option>Select Category</option>
-                    <option>Meat and Seafood</option>
-                    <option>General Grocery</option>
-                    <option>Dairy</option>
-                    <option>Produce</option>
-                    <option>Bakery</option>
-                    <option>Deli</option>
-                </select>
-                <label>Description</label>
-                <input onChange={handleChange} name="description" type="text"></input>
-                <label>Image url</label>
-                <input onChange={e => setForm({...newForm, images:[{sizes:[{url:e.target.value}]}]})}name="images" type="text"></input>
-                <input type="submit"></input>
-            </form>
+        <div className="formContainer">
+            <div className="newItemForm">
+                <h2>Submit New Item</h2>
+                <form onSubmit={handleSubmit}>
+                    <label>Input Quantity</label>
+                    <input onChange={handleChange} name="quantity" type="number" min={0}></input>
+                    <label>Select Priority</label>
+                    <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})}name="priority">
+                        <option>Priority</option>
+                        <option>Not a Priority</option>
+                    </select>
+                    <label>Brand</label>
+                    <input onChange={handleChange} name="brand" type="text"></input>
+                    <label>Categories</label>
+                    <select onChange={e => setForm({...newForm, categories:[e.target.value]})}>
+                        <option>Select Category</option>
+                        <option>Meat and Seafood</option>
+                        <option>General Grocery</option>
+                        <option>Dairy</option>
+                        <option>Produce</option>
+                        <option>Bakery</option>
+                        <option>Deli</option>
+                    </select>
+                    <label>Description</label>
+                    <input onChange={handleChange} name="description" type="text"></input>
+                    <label>Image url</label>
+                    <input onChange={e => setForm({...newForm, images:[{sizes:[{url:e.target.value}]}]})}name="images" type="text"></input>
+                    <input type="submit"></input>
+                </form>
+            </div>
         </div>
     )
 }

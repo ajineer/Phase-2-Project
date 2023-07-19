@@ -32,7 +32,7 @@ function PItem({item, addItem, handleDelete}){
     return(
         <div className="pantryItems">
             {item===undefined ? <>Loading...</> : <>
-                <img width={100} height={100} src={item.images[0].sizes[1]?.url} alt="loading"/>
+                <img width={100} height={100} src={item.image} alt="loading"/>
                 <label>In Pantry: </label>
                 <form className="pForm" onSubmit={e => patchQuantity(e)}>
                     <input onChange={handleChange} type="number" value={quantity}></input>

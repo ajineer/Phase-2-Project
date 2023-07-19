@@ -3,17 +3,17 @@ import GroceryList from "./GroceryList"
 import AroundItem from "./AroundItem"
 import {useState,useEffect} from 'react'
 
-function Pantry({pantry, setPantry}){
+function Pantry({pantry, setPantry, groceryList, setGroceryList}){
 
     const [current, setCurrent] = useState(1)
     const [next, setNext] = useState(2)
     const [prev, setPrev] = useState(0)
-    const [groceryList, setGroceryList] = useState([])
+    const [currentGlist, setCurrentGlist] = useState([])
+    
     function handleDelete(anItem){
-        // fetch(`http://localhost:3000/data/${item.id}`, {
-        //     method:"DELETE"
-        // })
-        
+        fetch(`http://localhost:3000/data/${item.id}`, {
+            method:"DELETE"
+        })
         const updatePantry = pantry.filter(item => item.id !== anItem.id)
         setPantry(updatePantry)
         if(current===updatePantry.length){
@@ -42,15 +42,29 @@ function Pantry({pantry, setPantry}){
     
 
     function addItem(item){
-        if(groceryList.includes(item) === true){
+        if(currentGlist.includes(item) === true){
             return
         }else{
-            setGroceryList([...groceryList, item])   
+            setCurrentGlist([...currentGlist, item])   
         }
     }
 
     function removeItem(gItem){
-        setGroceryList(groceryList.filter(item => item.productId !== gItem.productId))
+        setCurrentGlist(currentGlist.filter(item => item.productId !== gItem.productId))
+    }
+
+    function saveList(currentGlist){
+        if(currentGlist.length !== 0){
+            const data = {id:"", list:[...currentGlist]}
+            fetch(`http://localhost:3000/Lists`,{
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },body: JSON.stringify(data)
+            }).then(res => res.json())
+            .then(data => setGroceryList([...groceryList, data]))
+            setCurrentGlist([])
+        }
     }
 
     return(
@@ -65,9 +79,14 @@ function Pantry({pantry, setPantry}){
                     <button onClick={prevSlide}>{"\u276c"}</button><button onClick={nextSlide}>{"\u276d"}</button>
                 </div>
             </div>
-            <div className="groceryContainer">
-                {groceryList === []? <p>No Groceries</p>:<GroceryList aList={groceryList} removeItem={removeItem} />}
-            </div>
+            <>
+                <div className="saveDelete">
+                    <button onClick={() => saveList(currentGlist)}>Save List</button> 
+                </div>
+                <div className="groceryContainer">
+                    <GroceryList aList={currentGlist} removeItem={removeItem} />
+                </div>
+            </>
         </div>
     )
 }

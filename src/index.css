@@ -1,4 +1,9 @@
+html{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 body{
+  background-color: black;
   padding: 0;
   margin: 0; 
 }
@@ -6,54 +11,65 @@ body{
 .mainContainer{
   background-color: aqua;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   max-width: 100%;
   height: 100%;
+  margin-top: 5rem;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem; 
 }
 
 .homePage{
-  background-color: red;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 5;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 255, 255);
+  width: 50rem;
 }
 
 .navBar{
-  grid-row-start: 2;
-  grid-row-end: 5;
-  background-color: beige;
+  background-color: gray;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: left;
   margin-left: .5rem;
   margin-right: .5rem;
   padding: 1rem;
-  border: solid gray .5rem;
+  border: solid black .5rem;
   border-radius: 1rem;
   height: fit-content;
 }
+.navBar .firstLetter{
+  font-size: 6.5rem;
+}
 
+.navBar .nextLetters{
+  font-size: 2.8rem;
+}
+
+.navBar span{
+  color: white;
+}
 .groceryUI{
   display: flex;
   flex-direction: column;
 }
 
 .carouselContainer{
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 5;
   background-color: gray;
   display: flex;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   width: 45rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
 }
 
 .carousel{
-  background-color: beige;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +98,8 @@ body{
   background-color: white;
   margin-left: 1rem;
   margin-right: 1rem;
-  border: solid black .5rem;
+  padding:.5rem;
+  border: solid tan .5rem;
   border-radius: 1rem;
   box-shadow: .2rem .2rem .2rem gray;
 }
@@ -102,10 +119,15 @@ body{
   flex-direction: column;
 }
 
+.saveDelete{
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}
 .groceryContainer{
   display: flex;
   flex-wrap: wrap;
-  background-color: brown;
+  background-color: tan;
   padding: 1rem;
   justify-content: center;
   margin-top: 1rem;
@@ -123,7 +145,7 @@ body{
   justify-content: center;
   flex-direction: column;
   margin: .5rem;
-  border: solid black .5rem;
+  border: solid gray .5rem;
   width: fit-content;
 }
 
@@ -131,16 +153,92 @@ body{
   max-width: 15ch;
   max-height: 8ch;
   overflow: scroll;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gItem img{
+  margin-right: auto;
+  margin-left: auto;
 }
 
+.formContainer{
+  display: flex;
+  justify-content: center;
+  width: 50rem;
+}
 .newItemForm{
-  background-color: limegreen;
+  background-color: gray;
   margin-right: auto;
   margin-left: auto;
   padding: 1rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
 }
 
 .newItemForm form{
   display: flex;
   flex-direction: column;
+}
+
+.groceryListUI{
+  display: flex;
+  background-color: gray;
+  border: solid black .5rem;
+}
+
+.gLists{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background-color: white;
+  height: fit-content;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+}
+
+.gLists li{
+  display: flex;
+  width: fit-content;
+  margin-top: .5rem;
+  border-bottom: solid gray .1rem;
+  border-left: solid gray .1rem;
+}
+
+.gLists li span{
+  width: 6ch;
+}
+
+.gLists li .viewBtn{
+  margin-left: auto;
+}
+
+.gListItems{
+  background-color: white;
+  height: fit-content;
+  margin: 2rem 2rem auto 2rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.gListItems li{
+  max-width: 20ch;
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+
+.glItem{
+  display: flex;
+}
+
+.glItem button{
+  height: fit-content;
+  margin-left: .5rem;
+}
+
+.setStrike{
+  text-decoration: line-through;
 }
