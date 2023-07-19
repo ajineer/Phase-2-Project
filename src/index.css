@@ -218,7 +218,7 @@ body{
 .gListItems{
   background-color: white;
   height: fit-content;
-  margin: 2rem 2rem auto 2rem;
+  margin: 2rem;
   border: solid black .5rem;
   border-radius: 1rem;
   padding: 1rem;
@@ -228,6 +228,8 @@ body{
   max-width: 20ch;
   margin-top: .5rem;
   margin-left: .5rem;
+  border: solid black .1rem;
+  padding: .5rem 0 .5rem .5rem;
 }
 
 .glItem{
@@ -237,6 +239,8 @@ body{
 .glItem button{
   height: fit-content;
   margin-left: .5rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .setStrike{

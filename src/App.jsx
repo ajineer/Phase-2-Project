@@ -11,6 +11,7 @@ function App() {
   const [pantry, setPantry] = useState([])
   const [groceryList, setGroceryList] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
+  const [currentList, setCurrentList] = useState(groceryList[0])
   
   useEffect(()=>{
     async function fetchData(){
@@ -27,6 +28,7 @@ function App() {
       const response = await fetch(`http://localhost:3000/Lists`)
       const data = await response.json()
       setGroceryList(data)
+      setCurrentList(data[0])
     }
     fetchData()
   },[])
@@ -39,7 +41,7 @@ function App() {
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/pantry" render={()=> <Pantry pantry={pantry} setPantry={setPantry} groceryList={groceryList} setGroceryList={setGroceryList}/>}/>
         <Route exact path="/form" render={()=> <PantryForm pantry={pantry} setPantry={setPantry}/>}/>
-        <Route exact path="/groceryLists" render={()=> <GroceryLists groceryList={groceryList} setGroceryList={setGroceryList}/>}/>
+        <Route exact path="/groceryLists" render={()=> <GroceryLists setCurrentList={setCurrentList} currentList={currentList} groceryList={groceryList} setGroceryList={setGroceryList}/>}/>
       </Switch>
     </div>
   )

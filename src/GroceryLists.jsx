@@ -3,9 +3,8 @@ import GListItem from './GListItem'
 import { useState, useEffect } from "react"
 
 
-function GroceryLists({groceryList, setGroceryList}){
+function GroceryLists({groceryList, setGroceryList, setCurrentList, currentList}){
 
-    const [currentList, setCurrentList] = useState(groceryList[0])
     
     function viewList(thisList){
         setCurrentList(thisList)
@@ -20,7 +19,7 @@ function GroceryLists({groceryList, setGroceryList}){
     }
 
     return(
-        currentList === null ? <span>No Lists to Display</span>:
+        currentList === undefined ? <span>No Lists to Display</span>:
             <div className='groceryListUI'>
                 <ul className='gLists'>
                     {groceryList.map(l => <GList key={l.id} list={l} viewList={viewList} deleteList={deleteList}/>)}
