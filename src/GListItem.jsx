@@ -9,7 +9,7 @@ function GListItem ({item}){
     }
 
     return(
-        <li className="glItem"><span className={strike? "setStrike" : ""}>{item.description}</span><button onClick={toggle}>{"\u2713"}</button></li>
+        <li className="glItem"><img width={50} height={50} src={item.image}/><span className={strike? "setStrike" : "noStrike"}>{item.description}</span><button onClick={toggle}>{"\u2713"}</button></li>
     )
 }
 

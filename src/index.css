@@ -237,11 +237,17 @@ body{
   margin-top: .5rem;
   margin-left: .5rem;
   border: solid black .1rem;
-  padding: .5rem 0 .5rem .5rem;
+  padding: .5rem .1rem .5rem .5rem;
 }
 
 .glItem{
   display: flex;
+  overflow: hidden;
+}
+
+.glItem img{
+  display: flex;
+  margin: auto .5rem auto;
 }
 
 .glItem button{
@@ -253,4 +259,9 @@ body{
 
 .setStrike{
   text-decoration: line-through;
+  word-wrap: break-word;
+  border: solid limegreen .1rem;
+}
+.noStrike{
+  border: solid red .1rem;
 }
