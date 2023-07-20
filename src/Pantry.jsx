@@ -79,14 +79,15 @@ function Pantry({pantry, setPantry, groceryList, setGroceryList}){
                     <button onClick={prevSlide}>{"\u276c"}</button><button onClick={nextSlide}>{"\u276d"}</button>
                 </div>
             </div>
-            <>
-                <div className="saveDelete">
-                    <button onClick={() => saveList(currentGlist)}>Save List</button> 
-                </div>
+            {currentGlist.length === 0? <></>:
                 <div className="groceryContainer">
-                    <GroceryList aList={currentGlist} removeItem={removeItem} />
-                </div>
-            </>
+                    <div className="save">
+                        <button onClick={() => saveList(currentGlist)}>Save List</button> 
+                    </div>
+                    <div className="listItems">
+                        <GroceryList aList={currentGlist} removeItem={removeItem} />
+                    </div>
+                </div>}
         </div>
     )
 }

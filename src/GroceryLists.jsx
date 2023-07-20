@@ -1,6 +1,5 @@
 import GList from './GList'
 import GListItem from './GListItem'
-import { useState, useEffect } from "react"
 
 
 function GroceryLists({groceryList, setGroceryList, setCurrentList, currentList}){
