@@ -9,6 +9,7 @@ function Pantry({pantry, setPantry, groceryList, setGroceryList}){
     const [next, setNext] = useState(2)
     const [prev, setPrev] = useState(0)
     const [currentGlist, setCurrentGlist] = useState([])
+    const [quantity, setQuantity] = useState(pantry[1]===undefined? 0 : pantry[1].quantity)
     
     function handleDelete(anItem){
         fetch(`http://localhost:3000/data/${anItem.id}`, {
@@ -26,6 +27,19 @@ function Pantry({pantry, setPantry, groceryList, setGroceryList}){
         else if(current === 0){
             setPrev(prev-1)
         }
+    }
+
+    function patchQuantity(e){
+        e.preventDefault()
+        const patchObj ={
+            "quantity": quantity
+        }
+        fetch(`http://localhost:3000/data/${pantry[current].id}`,{
+            method:"PATCH",
+            headers: {
+                "Content-Type":"application/json"
+            },body: JSON.stringify({quantity: quantity})
+        })
     }
 
     const nextSlide = () => {
@@ -72,7 +86,7 @@ function Pantry({pantry, setPantry, groceryList, setGroceryList}){
             <div className="carouselContainer">
                 <div className="carousel">
                     {pantry[prev] === undefined ? <p>No Item</p> : <AroundItem item={pantry[prev]} />}
-                    {pantry[current] === undefined ? <p>No Item</p> : <PItem handleDelete={handleDelete} addItem={addItem} item={pantry[current]}/>}
+                    {pantry[current] === undefined ? <p>No Item</p> : <PItem quantity={quantity} setQuantity={setQuantity} patchQuantity={patchQuantity} handleDelete={handleDelete} addItem={addItem} item={pantry[current]}/>}
                     {pantry[next] === undefined ?<p>No Item</p> : <AroundItem item={pantry[next]}/>}
                 </div>
                 <div className="buttonsContainer">
