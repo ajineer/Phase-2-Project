@@ -15,7 +15,7 @@
     {
       "id": 2,
       "productId": "0005844945004",
-      "quantity": "1",
+      "quantity": "3",
       "priority": true,
       "brand": "Nature's Path Organic",
       "categories": [
@@ -41,7 +41,7 @@
     {
       "id": 4,
       "productId": "0004144930022",
-      "quantity": 2,
+      "quantity": "1",
       "priority": false,
       "brand": "Ghirardelli",
       "categories": [
@@ -66,7 +66,7 @@
     {
       "id": 6,
       "productId": "0004610000123",
-      "quantity": "4",
+      "quantity": "2",
       "priority": true,
       "brand": "Sargento",
       "categories": [
@@ -90,7 +90,7 @@
     {
       "id": 8,
       "productId": "0003100067104",
-      "quantity": 2,
+      "quantity": "2",
       "priority": true,
       "brand": "Bertolli",
       "categories": [
@@ -102,7 +102,7 @@
     {
       "id": 9,
       "productId": "0001111050241",
-      "quantity": 1,
+      "quantity": "2",
       "priority": true,
       "brand": "King Soopers City Market",
       "categories": [

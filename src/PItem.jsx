@@ -1,6 +1,26 @@
 import {useEffect, useState} from 'react'
 
-function PItem({item, addItem, handleDelete, patchQuantity, setQuantity, quantity}){
+function PItem({item, addItem, handleDelete, pantry, setPantry}){
+
+    const [quantity,setQuantity] = useState(item.quantity)
+
+    useEffect(()=>{
+        setQuantity(item.quantity)
+    },[item])
+
+    function patchQuantity(e){
+        e.preventDefault()
+        const patchObj ={
+            "quantity": e.target.quantity.value
+        }
+        fetch(`http://localhost:3000/data/${item.id}`,{
+            method:"PATCH",
+            headers: {
+                "Content-Type":"application/json"
+            },body: JSON.stringify(patchObj)   
+        }).then(r => r.json())
+        .then(data => setPantry([...pantry, pantry[item.id-1].quantity = data.quantity]))
+    }
 
     function handleClick(){
         addItem(item)
@@ -11,7 +31,7 @@ function PItem({item, addItem, handleDelete, patchQuantity, setQuantity, quantit
             {item===undefined ? <>Loading...</> : <>
                 <img width={100} height={100} src={item.image} alt="loading"/>
                 <label>In Pantry: </label>
-                <form className="pForm" onSubmit={e => patchQuantity(e, item)}>
+                <form className="pForm" onSubmit={e => patchQuantity(e, setQuantity)}>
                     <input name="quantity" onChange={e => setQuantity(e.target.value)} type="number" value={quantity}></input>
                     <input type='submit' value="Update Quantity"></input>
                 </form>
