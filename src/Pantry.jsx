@@ -1,7 +1,7 @@
 import PItem from "./PItem"
 import GroceryList from "./GroceryList"
 import AroundItem from "./AroundItem"
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 
 function Pantry({pantry, setPantry, groceryList, setGroceryList}){
 
@@ -11,7 +11,7 @@ function Pantry({pantry, setPantry, groceryList, setGroceryList}){
     const [currentGlist, setCurrentGlist] = useState([])
     
     function handleDelete(anItem){
-        fetch(`http://localhost:3000/data/${item.id}`, {
+        fetch(`http://localhost:3000/data/${anItem.id}`, {
             method:"DELETE"
         })
         const updatePantry = pantry.filter(item => item.id !== anItem.id)

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function PantryForm({pantry, setPantry, groceryList, setGroceryList}){
+function PantryForm({pantry, setPantry}){
     
     const [newForm, setForm] = useState({
         id:"",
@@ -9,7 +9,7 @@ function PantryForm({pantry, setPantry, groceryList, setGroceryList}){
         brand:"",
         categories:[],
         description:"",
-        images:[{sizes:[{url:""}]}]
+        images:""
     })
 
     function handleChange(e){
@@ -20,14 +20,14 @@ function PantryForm({pantry, setPantry, groceryList, setGroceryList}){
     
     function handleSubmit(e){
         e.preventDefault()
-        if(newForm.brand !== "" && newForm.description !== "" && newForm.images[0].sizes[0].url !== "" && newForm.categories[0] !== "Select Category"){
+        if(newForm.brand !== "" && newForm.description !== "" && newForm.images !== "" && newForm.categories[0] !== "Select Category"){
             fetch(`http://localhost:3000/data`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
                 },body: JSON.stringify({...newForm})
             }).then(res => res.json())
-            .then(data => setPantry([...pantry, newForm]))
+            .then(data => setPantry([...pantry, data]))
             e.target.reset()
         }else{
             alert("Please Enter All Fields!")
@@ -42,7 +42,7 @@ function PantryForm({pantry, setPantry, groceryList, setGroceryList}){
                     <label>Input Quantity</label>
                     <input onChange={handleChange} name="quantity" type="number" min={0}></input>
                     <label>Select Priority</label>
-                    <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})}name="priority">
+                    <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})} name="priority">
                         <option>Priority</option>
                         <option>Not a Priority</option>
                     </select>
@@ -61,7 +61,7 @@ function PantryForm({pantry, setPantry, groceryList, setGroceryList}){
                     <label>Description</label>
                     <input onChange={handleChange} name="description" type="text"></input>
                     <label>Image url</label>
-                    <input onChange={e => setForm({...newForm, images:[{sizes:[{url:e.target.value}]}]})}name="images" type="text"></input>
+                    <input onChange={handleChange} name="images" type="text"></input>
                     <input type="submit"></input>
                 </form>
             </div>
