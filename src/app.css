@@ -1,0 +1,267 @@
+html{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background-color: black;
+  padding: 0;
+  margin: 0; 
+}
+
+.mainContainer{
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem; 
+}
+
+.homePage{
+  display: flex;
+  justify-content: center;
+  background-color: #00ffff;
+  width: 50rem;
+}
+
+.navBar{
+  background-color: #808080;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  padding: 1rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+  height: fit-content;
+}
+.navBar .firstLetter{
+  font-size: 6.5rem;
+}
+
+.navBar .nextLetters{
+  font-size: 2.8rem;
+}
+
+.navBar span{
+  color: white;
+}
+.groceryUI{
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselContainer{
+  background-color: gray;
+  display: flex;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+}
+
+.carousel{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: fit-content;
+  padding: 1rem;
+} 
+
+.buttonsContainer{
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.buttonsContainer > button{
+  width: 2.5rem;
+}
+.pantryItems{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding:.5rem;
+  border: solid #d2b48c .5rem;
+  border-radius: 1rem;
+  box-shadow: .2rem .2rem .2rem gray;
+}
+.pantryItems img{
+  margin-left: auto;
+  margin-right: auto;
+}
+.pantryItems .pDescription{
+  max-width: 18ch;
+  max-height: 8ch;
+  word-wrap: break-word;
+  overflow: scroll;
+}
+
+.pForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.save{
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.groceryContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  border: solid black .5rem;
+  padding: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 45rem;
+  height: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.listItems{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gItem{
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: .5rem;
+  border: solid #f5f5dc .5rem;
+  width: fit-content;
+}
+
+.gItem .gDescription{
+  max-width: 15ch;
+  max-height: 8ch;
+  overflow: scroll;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gItem img{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.formContainer{
+  display: flex;
+  justify-content: center;
+  width: 50rem;
+}
+.newItemForm{
+  background-color: gray;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+}
+
+.newItemForm form{
+  display: flex;
+  flex-direction: column;
+}
+
+.groceryListUI{
+  display: flex;
+  background-color: gray;
+  border: solid black .5rem;
+}
+
+.gLists{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background-color: white;
+  height: fit-content;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+}
+
+.gLists li{
+  display: flex;
+  width: fit-content;
+  margin-top: .5rem;
+  border-bottom: solid gray .1rem;
+  border-left: solid gray .1rem;
+}
+
+.gLists li span{
+  width: 6ch;
+}
+
+.gLists li .viewBtn{
+  margin-left: auto;
+}
+
+.gListItems{
+  background-color: white;
+  height: fit-content;
+  margin: 2rem;
+  border: solid black .5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.gListItems li{
+  max-width: 20ch;
+  margin-top: .5rem;
+  margin-left: .5rem;
+  border: solid black .1rem;
+  padding: .5rem .1rem .5rem .5rem;
+}
+
+.glItem{
+  display: flex;
+  overflow: hidden;
+}
+
+.glItem img{
+  display: flex;
+  margin: auto .5rem auto;
+}
+
+.glItem button{
+  height: fit-content;
+  margin-left: .5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.setStrike{
+  text-decoration: line-through;
+  word-wrap: break-word;
+  border: solid #32cd32 .1rem;
+}
+.noStrike{
+  border: solid #ff0000 .1rem;
+}

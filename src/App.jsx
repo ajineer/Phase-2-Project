@@ -5,11 +5,11 @@ import Pantry from './Pantry'
 import NavBar from './NavBar'
 import PantryForm from './PantryForm'
 import GroceryLists from './GroceryLists'
+import useStore from './store'
 
 function App() {
 
-  const [pantry, setPantry] = useState([])
-  const [groceryList, setGroceryList] = useState([])
+  const { pantry, setPantry, groceryList, setGroceryList} = useStore()
   const [isLoaded, setIsLoaded] = useState(false)
   const [currentList, setCurrentList] = useState(groceryList[0])
   
@@ -35,14 +35,16 @@ function App() {
 
   return (
     isLoaded === false ? <span>Loading...</span> :
-    <div className='mainContainer'>
+    <div className='flex w-full h-full mt-[5rem] p-[1rem] bg-Aqua font-appFont'>
       <NavBar />
-      <Switch>
-        <Route exact path="/" render={() => <Home />}/>
-        <Route exact path="/pantry" render={()=> <Pantry pantry={pantry} setPantry={setPantry} groceryList={groceryList} setGroceryList={setGroceryList}/>}/>
-        <Route exact path="/form" render={()=> <PantryForm pantry={pantry} setPantry={setPantry}/>}/>
-        <Route exact path="/groceryLists" render={()=> <GroceryLists setCurrentList={setCurrentList} currentList={currentList} groceryList={groceryList} setGroceryList={setGroceryList}/>}/>
-      </Switch>
+      <div className='ml-auto mr-auto w-[80%] h-[85vh] border-[.5rem] border-black rounded-xl bg-Gray'>
+        <Switch>
+          <Route exact path="/" render={() => <Home />}/>
+          <Route exact path="/pantry" render={()=> <Pantry/>}/>
+          <Route exact path="/form" render={()=> <PantryForm/>}/>
+          <Route exact path="/groceryLists" render={()=> <GroceryLists/>}/>
+        </Switch>
+      </div>
     </div>
   )
 }

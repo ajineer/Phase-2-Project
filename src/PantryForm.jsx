@@ -1,7 +1,9 @@
 import { useState } from "react"
+import useStore from "./store"
 
-function PantryForm({pantry, setPantry}){
+function PantryForm(){
     
+    const { pantry, setPantry } = useStore()
     const [newForm, setForm] = useState({
         id:"",
         quantity:0,

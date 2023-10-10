@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min"
 
 function NavBar(){
     return(
-        <div className="navBar">
-            <h1><span className="firstLetter">P</span><span className="nextLetters">rackr</span></h1>
+        <div className="flex flex-col ml-[.5rem] mr-[mr-[.5rem] p-[1rem] border-[.5rem] border-black rounded-xl bg-Gray text-white h-fit text-2xl">
+            <h1><span className="text-6xl">P</span><span className="text-4xl">rackr</span></h1>
             <NavLink to={"/"} exact>
                 <span>Home</span>
             </NavLink>

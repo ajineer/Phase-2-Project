@@ -27,7 +27,7 @@ function PItem({item, addItem, handleDelete, pantry, setPantry}){
     }
 
     return(
-        <div className="pantryItems">
+        <div className="pantryItems flex flex-col bg-white border-[.5rem] border-Tan h-[20rem] w-[33%] h-full">
             {item===undefined ? <>Loading...</> : <>
                 <img width={100} height={100} src={item.image} alt="loading"/>
                 <label>In Pantry: </label>

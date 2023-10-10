@@ -2,9 +2,12 @@ import PItem from "./PItem"
 import GroceryList from "./GroceryList"
 import AroundItem from "./AroundItem"
 import {useEffect, useState} from 'react'
+import useStore from "./store"
 
-function Pantry({pantry, setPantry, groceryList, setGroceryList}){
 
+function Pantry(){
+
+    const { pantry, setPantry, groceryList, setGroceryList } = useStore()
     const [current, setCurrent] = useState(1)
     const [next, setNext] = useState(2)
     const [prev, setPrev] = useState(0)
@@ -68,16 +71,11 @@ function Pantry({pantry, setPantry, groceryList, setGroceryList}){
     }
 
     return(
-        <div className="groceryUI">
-            <div className="carouselContainer">
-                <div className="carousel">
-                    {pantry[prev] === undefined ? <p>No Item</p> : <AroundItem item={pantry[prev]} />}
-                    {pantry[current] === undefined ? <p>No Item</p> : <PItem handleDelete={handleDelete} addItem={addItem} item={pantry[current]} pantry={pantry} setPantry={setPantry}/>}
-                    {pantry[next] === undefined ?<p>No Item</p> : <AroundItem item={pantry[next]}/>}
-                </div>
-                <div className="buttonsContainer">
-                    <button onClick={prevSlide}>{"\u276c"}</button><button onClick={nextSlide}>{"\u276d"}</button>
-                </div>
+        <div className="flex flex-col h-full">
+            <div className="flex flex-row p-[2rem] w-[100%]">
+                    <button className='h-min mt-auto mb-auto ml-auto bg-white p-[.5rem] border-[.2rem] border-black rounded hover:bg-Tan' onClick={prevSlide}>{"\u276c"}</button>
+                    <PItem handleDelete={handleDelete} addItem={addItem} item={pantry[current]} pantry={pantry} setPantry={setPantry}/>
+                    <button className='h-min mt-auto mb-auto mr-auto bg-white p-[.5rem] border-[.2rem] border-black rounded hover:bg-Tan' onClick={nextSlide}>{"\u276d"}</button>
             </div>
             {currentGlist.length === 0? <></>:
                 <div className="groceryContainer">
