@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react'
+import useStore from './store'
 
 function PItem({item, addItem, handleDelete, pantry, setPantry}){
 
     const [quantity,setQuantity] = useState(item.quantity)
+    const {currentGlist, setCurrentGlist } = useStore()
 
     useEffect(()=>{
         setQuantity(item.quantity)
@@ -22,8 +24,12 @@ function PItem({item, addItem, handleDelete, pantry, setPantry}){
         .then(data => setPantry([...pantry, pantry[item.id-1].quantity = data.quantity]))
     }
 
-    function handleClick(){
-        addItem(item)
+    function handleClick(item){
+        if(currentGlist.includes(item) === true){
+            return
+        }else{
+            setCurrentGlist([...currentGlist, item])   
+        }
     }
 
     return(
@@ -36,7 +42,7 @@ function PItem({item, addItem, handleDelete, pantry, setPantry}){
                     <input type='submit' value="Update Quantity"></input>
                 </form>
                 <p>Priority: {item.priority === true? "Need":"Don't need"}</p>
-                <button onClick={handleClick}>Add Item</button>
+                <button onClick={() => handleClick(item)}>Add Item</button>
                 <button onClick={() => handleDelete(item)}>Delete Item From Pantry</button>
             </>}
         </div>

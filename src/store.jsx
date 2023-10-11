@@ -11,7 +11,8 @@ const useStore = create((set) =>({
     setGroceryList: (newGroceryList) => set({ groceryList:newGroceryList }),
     groceryListidx: 0,
     setGroceryListidx: (newGroceryListidx) => set({ groceryListidx:newGroceryListidx }),
-
+    currentGlist: [],
+    setCurrentGlist: (newCurrentGlist) => set({ currentGlist:newCurrentGlist })
 }))
 
 export default useStore

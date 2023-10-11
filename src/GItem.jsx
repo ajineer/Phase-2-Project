@@ -1,5 +1,4 @@
 function GItem({item, removeItem}){
-    {}
 
     function handleRemove(){
         removeItem(item)

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "productId": "0004450020199",
-      "quantity": "2",
+      "quantity": "3",
       "priority": true,
       "brand": "Hillshire Farm",
       "categories": [
@@ -100,110 +100,5 @@
       "image": "https://www.kroger.com/product/images/large/front/0005100000011"
     }
   ],
-  "Lists": [
-    {
-      "id": 1,
-      "list": [
-        {
-          "id": 2,
-          "productId": "0005844945004",
-          "quantity": "2",
-          "priority": true,
-          "brand": "Nature's Path Organic",
-          "categories": [
-            "Breakfast",
-            "Natural & Organic"
-          ],
-          "description": "Nature's Path Organic® Apple Cinnamon Instant Hot Oatmeal Packets",
-          "image": "https://www.kroger.com/product/images/large/front/0005844945004"
-        },
-        {
-          "id": 3,
-          "productId": "0001111085428",
-          "quantity": 1,
-          "priority": true,
-          "brand": "Kroger",
-          "categories": [
-            "Breakfast",
-            "Dairy"
-          ],
-          "description": "Kroger® Large White Eggs",
-          "image": "https://www.kroger.com/product/images/large/front/0001111085428"
-        },
-        {
-          "id": 4,
-          "productId": "0004144930022",
-          "quantity": "1",
-          "priority": false,
-          "brand": "Ghirardelli",
-          "categories": [
-            "Baking Goods"
-          ],
-          "description": "Ghirardelli® Double Chocolate Brownie Mix",
-          "image": "https://www.kroger.com/product/images/large/front/0004144930022"
-        },
-        {
-          "id": 5,
-          "productId": "0005150025537",
-          "quantity": 2,
-          "priority": true,
-          "brand": "Jif",
-          "categories": [
-            "Condiment & Sauces",
-            "Condiment & Sauces"
-          ],
-          "description": "Jif® Extra Crunchy Peanut Butter",
-          "image": "https://www.kroger.com/product/images/large/front/0005150025537"
-        },
-        {
-          "id": 6,
-          "productId": "0004610000123",
-          "quantity": "2",
-          "priority": true,
-          "brand": "Sargento",
-          "categories": [
-            "Dairy"
-          ],
-          "description": "Sargento® Natural Provolone Cheese Slices",
-          "image": "https://www.kroger.com/product/images/large/front/0004610000123"
-        },
-        {
-          "id": 7,
-          "productId": "0001111020210",
-          "quantity": 1,
-          "priority": false,
-          "brand": "Bakery Fresh Goodness",
-          "categories": [
-            "Bakery"
-          ],
-          "description": "Bakery Fresh Goodness Chocolate Chip Cookies",
-          "image": "https://www.kroger.com/product/images/large/left/0001111020210"
-        },
-        {
-          "id": 10,
-          "productId": "0005100000011",
-          "quantity": "1",
-          "priority": true,
-          "brand": "Campbell's",
-          "categories": [
-            "Canned & Packaged"
-          ],
-          "description": "Campbell's® Condensed Tomato Soup",
-          "image": "https://www.kroger.com/product/images/large/front/0005100000011"
-        },
-        {
-          "id": 1,
-          "productId": "0004450020199",
-          "quantity": "2",
-          "priority": true,
-          "brand": "Hillshire Farm",
-          "categories": [
-            "Meat & Seafood"
-          ],
-          "description": "Hillshire Farm Ultra Thin Sliced Oven Roasted Turkey Breast Lunch Meat",
-          "image": "https://www.kroger.com/product/images/medium/front/0004450020199"
-        }
-      ]
-    }
-  ]
+  "Lists": []
 }
