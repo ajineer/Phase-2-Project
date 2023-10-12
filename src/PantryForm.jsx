@@ -37,37 +37,34 @@ function PantryForm(){
     }
 
     return(
-        <div className="formContainer">
-            <div className="newItemForm">
-                <h2>Submit New Item</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>Input Quantity</label>
-                    <input onChange={handleChange} name="quantity" type="number" min={0}></input>
-                    <label>Select Priority</label>
-                    <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})} name="priority">
-                        <option>Priority</option>
-                        <option>Not a Priority</option>
-                    </select>
-                    <label>Brand</label>
-                    <input onChange={handleChange} name="brand" type="text"></input>
-                    <label>Categories</label>
-                    <select onChange={e => setForm({...newForm, categories:[e.target.value]})}>
-                        <option>Select Category</option>
-                        <option>Meat and Seafood</option>
-                        <option>General Grocery</option>
-                        <option>Dairy</option>
-                        <option>Produce</option>
-                        <option>Bakery</option>
-                        <option>Deli</option>
-                    </select>
-                    <label>Description</label>
-                    <input onChange={handleChange} name="description" type="text"></input>
-                    <label>Image url</label>
-                    <input onChange={handleChange} name="images" type="text"></input>
-                    <input type="submit"></input>
-                </form>
-            </div>
-        </div>
+        
+        <form className='flex flex-col bg-Tan bg-opacity-80 h-fit w-[33%] m-auto p-[1rem]' onSubmit={handleSubmit}>
+            <h2 className="text-white font-bold ml-auto mr-auto">Submit New Item</h2>
+            <label className="text-white">Quantity: </label>
+            <input onChange={handleChange} name="quantity" type="number" min={0}></input>
+            <label className="text-white">Select Priority:</label>
+            <select onChange={e => setForm({...newForm, priority: e.target.value === "Priority"? true:false})} name="priority">
+                <option>Priority</option>
+                <option>Not a Priority</option>
+            </select>
+            <label className="text-white">Brand</label>
+            <input onChange={handleChange} name="brand" type="text"></input>
+            <label className="text-white">Categories</label>
+            <select onChange={e => setForm({...newForm, categories:[e.target.value]})}>
+                <option>Select Category</option>
+                <option>Meat and Seafood</option>
+                <option>General Grocery</option>
+                <option>Dairy</option>
+                <option>Produce</option>
+                <option>Bakery</option>
+                <option>Deli</option>
+            </select>
+            <label className="text-white">Description</label>
+            <input onChange={handleChange} name="description" type="text"></input>
+            <label className="text-white">Image url</label>
+            <input onChange={handleChange} name="images" type="text"></input>
+            <input className='bg-Green hover:bg-green-300' type="submit"></input>
+        </form>
     )
 }
 export default PantryForm

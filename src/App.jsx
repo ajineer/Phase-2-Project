@@ -35,9 +35,9 @@ function App() {
 
   return (
     isLoaded === false ? <span>Loading...</span> :
-    <div className='flex w-full h-full mt-[5rem] p-[1rem] bg-Aqua font-appFont'>
+    <div className='flex w-full h-full mt-[5rem] p-[1rem] bg-white font-appFont'>
       <NavBar />
-      <div className='ml-auto mr-auto w-[80%] h-[85vh] border-[.5rem] border-black rounded-xl bg-Gray'>
+      <div className='flex ml-auto mr-auto w-[80vw] h-[85vh] border-[.5rem] border-black rounded-xl bg-Gray bg-home_page bg-contain'>
         <Switch>
           <Route exact path="/" render={() => <Home />}/>
           <Route exact path="/pantry" render={()=> <Pantry/>}/>
