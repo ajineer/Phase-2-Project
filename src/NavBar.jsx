@@ -7,14 +7,14 @@ function NavBar(){
             <NavLink to={"/"} exact>
                 <span>Home</span>
             </NavLink>
-            <NavLink to={"/pantry"} exact>
-                <span>Pantry</span>
+            <NavLink to={"/form"} exact>
+                <span>New Item</span>
             </NavLink>
             <NavLink to={"/groceryLists"}>
                 <span>Grocery Lists</span>
             </NavLink>
-            <NavLink to={"/form"} exact>
-                <span>New Item</span>
+            <NavLink to={"/pantry"} exact>
+                <span>Pantry</span>
             </NavLink>
         </div>
     )

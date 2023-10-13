@@ -63,7 +63,7 @@ function PantryForm(){
             <input onChange={handleChange} name="description" type="text"></input>
             <label className="text-white">Image url</label>
             <input onChange={handleChange} name="images" type="text"></input>
-            <input className='bg-Green hover:bg-green-300' type="submit"></input>
+            <input className='w-fit ml-auto mr-auto bg-Sky hover:bg-green-300 pl-[1rem] pr-[1rem] mt-[1rem]' type="submit"></input>
         </form>
     )
 }

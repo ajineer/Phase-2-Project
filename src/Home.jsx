@@ -4,7 +4,7 @@ function Home(){
             <span className="italic text-Beig"><span className="text-5xl">W</span>elcome to Prackr</span>
             <span className="font-bold">
                 , manage your pantry and grocery lists with ease.
-                Start by using the navigation to the left and get started!
+                Start by using the navigation to the left, and get started!
             </span>
         </p>
     )
